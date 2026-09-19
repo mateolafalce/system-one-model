@@ -31,6 +31,8 @@ Handoff for the next session. The original spec below is still the source of tru
 | Temperatures | `artifacts/temps.json` — noul K=2 T=0.6; score K=3–5 T=0.7 (no choice val to fit 77-way T) |
 | Phase 2 **test** | `eval/tables/phase2.json` |
 | Latency | `eval/tables/latency.json` — 10-q support/email bundle p95 **32.5 ms** (PASS). 10× BANKING77-77way p95 133 ms (pack-bound). |
+| Serve | `scripts/07_serve.py --ckpt artifacts/phase2/best --port 8010`. `GET /health` → `{"ok": true, "device": "cuda"}`. ~613 MiB VRAM. |
+| Repo conventions | `AGENTS.md`, `scripts/check-conventional-commits`, `.github/workflows/conventional-commits.yml`, PR template. Local git `main`. |
 
 Phase 1 vs Phase 2 **test** go/no-go (section 11):
 
@@ -59,7 +61,7 @@ The student **beats** the teacher on gold, as section 11 allows. The 90% miss is
 ### Not done
 
 - Distilled-template eval on the 225 holdout states (compare student vs a fresh Qwen pass). Imitation, not gold.
-- 20 hand-written English tickets as a sanity set (one example payload is `examples/support.json`).
+- 20 hand-written English tickets as a sanity set (one example payload is `examples/support.json`). Live POST on four tickets: `dept`/`tone`/`refund`/`cancel` look sane; `phish` noul is biased high (0.54–0.94 on non-phish mail). Treat `phish` as untrusted until the holdout eval.
 - `--preset full` gold (HelpSteer2, CLINC, Bitext, …) has **not** been exported. Disk was cleaned 2026-09-19 (`/home` ~83 GB free); still do not download until you mean to train on it.
 - Option-shuffle drop on val not measured as a standalone table (stress rows were in Phase 2 train).
 - No GitHub remote yet (local git only).
