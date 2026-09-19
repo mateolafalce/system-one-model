@@ -1,0 +1,10 @@
+model: Qwen/Qwen2.5-7B-Instruct-AWQ
+fallback_model: Qwen/Qwen2.5-7B-Instruct
+quant: awq
+dtype: float16
+temperature: 1.0
+max_state_chars: 1600
+max_seq: 1024
+batch_size: 1
+letter_map_path: artifacts/teacher_letter_map.json
+cache_dir: data/distilled/cache

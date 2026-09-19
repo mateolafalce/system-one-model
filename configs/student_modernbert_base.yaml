@@ -1,0 +1,29 @@
+backbone: answerdotai/ModernBERT-base
+max_length: 512
+dtype: bfloat16
+attn_implementation: sdpa
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [Wqkv, Wi, Wo]
+head:
+  n_layers: 2
+  dropout: 0.1
+train:
+  batch_size: 4
+  grad_accum: 8
+  lr_lora: 2.0e-4
+  lr_head: 1.0e-4
+  weight_decay: 0.01
+  warmup_steps: 500
+  epochs: 2
+  max_grad_norm: 1.0
+  seed: 42
+  score_rps_weight: 0.5
+  aux_ce_weight: 0.0
+  hard_soft_mix: 1.0
+  gradient_checkpointing: false
+  log_every: 20
+  eval_every: 200
+output_dir: artifacts/phase1

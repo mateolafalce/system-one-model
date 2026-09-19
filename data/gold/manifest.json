@@ -1,0 +1,21 @@
+[
+  {
+    "task": "banking77",
+    "ok": true,
+    "n": 26138,
+    "splits": {"train": 19986, "test": 6152},
+    "note": "intent + coarse; two records per utterance"
+  },
+  {
+    "task": "sms",
+    "ok": true,
+    "n": 5574,
+    "splits": {"train": 5016, "val": 279, "test": 279}
+  },
+  {
+    "task": "sst5",
+    "ok": true,
+    "n": 11855,
+    "splits": {"train": 8544, "val": 1101, "test": 2210}
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "temperature": 1.0,
+  "file": "data/gold/banking77_test.jsonl",
+  "limit": 1000,
+  "note": "Constrained letter-logit scoring. 77-way options compacted. Same split as student test.",
+  "families": {
+    "banking77": {"acc": 0.562, "n": 500},
+    "banking77_coarse": {"acc": 0.602, "n": 500}
+  },
+  "overall": {"acc": 0.582, "n": 1000},
+  "student_phase1_test": {
+    "banking77": 0.880,
+    "banking77_coarse": 0.954
+  }
+}

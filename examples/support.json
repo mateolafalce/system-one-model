@@ -1,0 +1,61 @@
+{
+  "state": {
+    "text": "The app crashes every time I tap Pay. I was charged twice and I want a refund today."
+  },
+  "questions": {
+    "dept": {
+      "type": "choice",
+      "instructions": "Which team should handle this customer request?",
+      "criteria": {
+        "billing": "Charges, invoices, refunds, payments, or account balance",
+        "technical": "Bugs, outages, login, app, or product not working",
+        "sales": "Buying, upgrading, pricing, or a new plan",
+        "other": "Anything else, including unclear requests"
+      }
+    },
+    "tone": {
+      "type": "choice",
+      "instructions": "What is the channel tone of this message?",
+      "criteria": {
+        "request": "The writer wants something done",
+        "complaint": "The writer is unhappy with service or a product",
+        "question": "The writer is asking for information",
+        "praise": "The writer is thanking or complimenting"
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is this request?",
+      "criteria": [
+        "Low. Can wait days. No deadline or harm.",
+        "Medium. Should be handled this week.",
+        "High. Immediate impact, outage, or explicit deadline."
+      ]
+    },
+    "frustration": {
+      "type": "score",
+      "instructions": "How frustrated is the writer?",
+      "criteria": [
+        "Calm. Neutral or polite.",
+        "Annoyed. Some irritation, still cooperative.",
+        "Angry. Hostile, threats, or heavy blame."
+      ]
+    },
+    "refund": {
+      "type": "noul",
+      "instructions": "The customer asks for a refund."
+    },
+    "bug": {
+      "type": "noul",
+      "instructions": "The message reports a bug or an outage."
+    },
+    "cancel": {
+      "type": "noul",
+      "instructions": "The customer threatens to cancel."
+    },
+    "phish": {
+      "type": "noul",
+      "instructions": "The message looks like phishing or social engineering."
+    }
+  }
+}

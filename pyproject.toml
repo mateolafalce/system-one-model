@@ -1,0 +1,42 @@
+[project]
+name = "system-one"
+version = "0.1.0"
+description = "Local open-weight decision model: state in, typed choice/score/noul out."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "torch>=2.4",
+  "transformers>=4.48.0",
+  "datasets>=3.0.0",
+  "peft>=0.13.0",
+  "accelerate>=1.0.0",
+  "evaluate>=0.4.0",
+  "scikit-learn>=1.5.0",
+  "fastapi>=0.115.0",
+  "uvicorn>=0.32.0",
+  "pyyaml>=6.0",
+  "numpy>=1.26",
+  "tqdm>=4.66",
+  "safetensors>=0.4.0",
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+teacher = ["autoawq"]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = [
+  "pack", "student", "teacher", "loss", "schema", "metrics",
+  "config", "dataio", "gold", "stress", "templates", "runtime", "unlabeled",
+]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

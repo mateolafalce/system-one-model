@@ -1,0 +1,32 @@
+{
+  "in_task": {
+    "banking77:test": {
+      "n": 3076,
+      "acc": 0.8800390117035111,
+      "ece": 0.05850226856716435,
+      "acc@50cov": 0.9889466840052016,
+      "acc@80cov": 0.9597724502234863
+    },
+    "banking77_coarse:test": {
+      "n": 3076,
+      "acc": 0.9541612483745123,
+      "ece": 0.010613570888758608,
+      "acc@50cov": 0.9980494148244473
+    },
+    "sms_spam:test": {
+      "n": 279,
+      "acc": 0.992831541218638,
+      "ece": 0.02555113459451598,
+      "acc@50cov": 1.0
+    },
+    "sst5:test": {
+      "n": 2210,
+      "acc": 0.5751131221719457,
+      "ece": 0.15153845054472553,
+      "acc@50cov": 0.6389140271493212,
+      "spearman": 0.851911492885868,
+      "qwk": 0.8348619206115002
+    }
+  },
+  "note": "Phase 1 best, no temperature. Reconstructed from artifacts/phase1/eval.log + previous eval.json."
+}
