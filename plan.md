@@ -32,7 +32,7 @@ Handoff for the next session. The original spec below is still the source of tru
 | Phase 2 **test** | `eval/tables/phase2.json` |
 | Latency | `eval/tables/latency.json` — 10-q support/email bundle p95 **32.5 ms** (PASS). 10× BANKING77-77way p95 133 ms (pack-bound). |
 | Serve | `scripts/07_serve.py --ckpt artifacts/phase2/best --port 8010`. `GET /health` → `{"ok": true, "device": "cuda"}`. ~613 MiB VRAM. |
-| Repo conventions | `AGENTS.md`, `scripts/check-conventional-commits`, `.github/workflows/conventional-commits.yml`, PR template. Local git `main`. |
+| Repo conventions | `AGENTS.md`, `scripts/check-conventional-commits`, `.github/workflows/conventional-commits.yml`, PR template. GitHub: https://github.com/mateolafalce/system-one-model (`main`). |
 
 Phase 1 vs Phase 2 **test** go/no-go (section 11):
 

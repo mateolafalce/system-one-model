@@ -7,6 +7,7 @@ This is not a TypeSafe Jev clone. Jev is closed, uses unpublished RLCD, and clai
 Teacher: frozen `Qwen/Qwen2.5-7B-Instruct-AWQ` (letter-logit scoring, never JSON sampling).  
 Student: `ModernBERT-base` (149M) + a scoring head. Upgrade to `ModernBERT-large` only if base plateaus.
 
+**Code:** https://github.com/mateolafalce/system-one-model  
 **Resume:** see `plan.md` section 0 (2026-09-19). Phases 0–2 done. Ship `artifacts/phase2/best` + `artifacts/temps.json`. Test: BANKING77 88.5%, SMS 98.9%, SST-5 55.9% (ECE 0.033). Teacher ceiling on BANKING77 is 56%. Serve: `python scripts/07_serve.py --ckpt artifacts/phase2/best --port 8010`. Agent conventions: `AGENTS.md`.
 
 ## Hardware split
